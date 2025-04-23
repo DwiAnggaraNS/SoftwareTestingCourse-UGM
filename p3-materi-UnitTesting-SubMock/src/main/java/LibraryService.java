@@ -11,6 +11,5 @@ public class LibraryService {
 
     public void saveBook(List <Book> books){
         // seolah-olah ini simpan ke database
-
     }
 }

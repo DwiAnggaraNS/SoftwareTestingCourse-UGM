@@ -42,15 +42,7 @@ class StudentManagerTest {
     // 1.1 Penggunaan @CsvSource
     @Order(1)
     @ParameterizedTest(name = "Test #{index} - Grade {0} should return status {1}")
-    @CsvSource({
-            "90, A",
-            "75, B",
-            "65, C",
-            "55, D",
-            "45, E",
-            "-10, Invalid Grade",
-            "110, Invalid Grade"
-    })
+    @CsvSource({"90, A","75, B","65, C","55, D","45, E","-10, Invalid Grade","110, Invalid Grade"})
     void testCheckGradeStatus(double grade, String expectedStatus) {
         String actualStatus = studentManager.checkGradeStatus(grade);
         assertEquals(expectedStatus, actualStatus,
@@ -59,7 +51,7 @@ class StudentManagerTest {
 
     // 1.2 Penggunaan @ValueSource
     @Order(2)
-    @ParameterizedTest(name = "Major {0} should return valid subjects")
+    @ParameterizedTest(name = "Test #{index} Major {0} should return valid subjects")
     @ValueSource(strings = {"Computer Science", "Mathematics", "Physics"})
     void testGetSubjectsForValidMajor(String major) {
         List<String> subjects = studentManager.getSubjectsByMajor(major);
@@ -214,7 +206,7 @@ class StudentManagerTest {
             boolean result = studentManager.isEligibleForScholarship(3.0, 1, true);
             assertTrue(result, "Student at GPA threshold with activities should be eligible");
         }
-
+    
         @Order(3)
         @Test
         void testIneligibleCase() {
@@ -242,3 +234,4 @@ class StudentManagerTest {
         assertEquals(0, studentManager.getAllStudents().size(), "Should have 0 students after clearing");
     }
 }
+

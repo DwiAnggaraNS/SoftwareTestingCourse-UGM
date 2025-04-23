@@ -2,10 +2,10 @@ public class Largest {
 
     public static int largestNumberInArray(int[] numbers) {
         // Inisiasi nilai max dengan nilai terbesar
-        int largest = Integer.MAX_VALUE;
+        int largest = Integer.MIN_VALUE;
 
         // Looping untuk mencari nilai max
-        for (int i = 0; i < numbers.length-1; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] > largest) {
                 largest = numbers[i];
             }
