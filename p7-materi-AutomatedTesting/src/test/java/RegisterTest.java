@@ -97,7 +97,7 @@ public class RegisterTest {
         checkboxField.click();
 
         //11. Select checkbox 'Receive special offers from our partners!'
-        WebElement checkboxField2 = driver.findElement(By.id("optin"));
+            WebElement checkboxField2 = driver.findElement(By.id("optin"));
         checkboxField2.click();
 
         //12. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
